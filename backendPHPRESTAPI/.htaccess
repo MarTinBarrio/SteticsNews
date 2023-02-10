@@ -1,0 +1,12 @@
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{localhost} ^twits.com$ [OR]
+  RewriteCond %{localhost} ^www.twits.com$
+  RewriteRule (.*)$ https://www.twits.com/$1 [R=301,L]
+</IfModule>
+
+
+RewriteEngine On
+RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?pagina=$1
